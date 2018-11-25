@@ -1,7 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 /* Sticky footer styles
 -------------------------------------------------- */
-
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Sedgwick+Ave');
+#my-body {
+  font-family: 'Comfortaa', cursive;
+}
+.navbar {
+  font-family: 'Sedgwick Ave', cursive;
+}
+body {
+    /* Location of the image */
+    background-image: url(assets/images/back.jpg);
+  
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+    
+    /* Background image is fixed in the viewport so that it doesn't move when 
+       the content's height is greater than the image's height */
+    background-attachment: fixed;
+    
+    /* This is what makes the background image rescale based
+       on the container's size */
+    background-size: cover;
+    
+    /* Set a background color that will be displayed
+       while the background image is loading */
+    background-color: #464646;
+}
+#custom-background {
+  background-color: rgb(57, 94, 144, 0.8);
+  color: white;
+}
 /* Animation css */
 .animated {
     -webkit-animation-duration: 1s;
