@@ -6,7 +6,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ hero.name }}</h5>
             <p class="card-text">{{ hero.bio }}</p>
-            <small>{{ hero.home}} {{ hero.release }}</small>
+            <small>{{ hero.home}} {{ hero.release | date: 'y' }}</small>
           </div>
           <div class="card-footer">
             <a [routerLink]="['/hero', i]" class="btn btn-dark btn-block">More</a>

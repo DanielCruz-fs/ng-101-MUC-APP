@@ -1,3 +1,20 @@
-<p>
-  hero works!
-</p>
+<div id="custom-background" class="jumbotron jumbotron-fluid animated fadeIn text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+          <h1 class="display-4">{{ hero.name | uppercase }}</h1>
+          <p class="lead">{{ hero.bio }}</p>  
+          <small>{{ hero.home }} {{ hero.release }}</small>
+      </div>
+      <div class="col-sm-4">
+          <img [src]="hero.img" class="img-fluid" [alt]="hero.name">
+          <ng-container *ngIf="hero.home == 'Marvel'; else elseTemplate">
+            <img id="hero-home" src="assets/images/marvel.png" class="img-fluid" [alt]="hero.name">  
+          </ng-container>
+          <ng-template #elseTemplate>
+            <img id="hero-home" src="assets/images/dc.png" class="img-fluid" [alt]="hero.name">
+          </ng-template>
+      </div>
+    </div>
+</div>
+</div>

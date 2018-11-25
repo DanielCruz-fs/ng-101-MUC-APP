@@ -34,6 +34,13 @@ body {
   background-color: rgb(57, 94, 144, 0.8);
   color: white;
 }
+#custom-background-danger {
+  background-color: rgb(216, 52, 52, 0.8);
+  color: white;
+}
+#hero-home {
+  margin-top: -30px;
+}
 /* Animation css */
 .animated {
     -webkit-animation-duration: 1s;

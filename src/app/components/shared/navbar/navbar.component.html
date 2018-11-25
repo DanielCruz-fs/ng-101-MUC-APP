@@ -20,10 +20,11 @@
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search Hero..." aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-inline my-2 my-lg-0">
+      <input id="search-input" class="form-control mr-sm-2" type="text"
+       placeholder="Search Hero..." #searchText (keyup.enter)="searchHero(searchText.value)">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="searchHero(searchText.value)">Search</button>
+    </div>
   </div>
   </div>
 </nav>

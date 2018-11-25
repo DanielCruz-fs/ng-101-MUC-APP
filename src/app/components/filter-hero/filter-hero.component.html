@@ -1,0 +1,29 @@
+<ng-container *ngIf="filterHeroes.length != 0; else elseTemplate">
+    <div class="container mt-3 animated fadeIn text-white">
+        <span class="badge badge-pill badge-dark">Looked For: {{ searchText }}</span>
+        <div class="card-deck row">
+          <div class="col-md-4 col-sm-6 p-3" *ngFor="let hero of filterHeroes; let i = index">
+              <div class="card text-center" id="custom-background">
+                  <img class="card-img-top" [src]="hero.img" [alt]="hero.name">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ hero.name }}</h5>
+                    <p class="card-text">{{ hero.bio }}</p>
+                    <small>{{ hero.home}} {{ hero.release | date: 'y' }}</small>
+                  </div>
+                  <div class="card-footer">
+                    <a [routerLink]="['/hero', i]" class="btn btn-dark btn-block">More</a>
+                  </div>
+              </div>
+          </div>    
+        </div>
+      </div>  
+</ng-container>
+<ng-template #elseTemplate>
+    <div id="custom-background-danger" class="jumbotron jumbotron-fluid animated fadeIn text-center">
+        <div class="container">
+        <h1 class="display-4">Upss!!</h1>
+        <p class="lead">Could not find: {{ searchText }}</p>
+        <a class="btn btn-dark btn-lg" [routerLink]="['/heroes']" role="button">Heroes</a>
+        </div>
+    </div>
+</ng-template>

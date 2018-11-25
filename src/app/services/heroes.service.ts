@@ -60,6 +60,20 @@ export class HeroesService {
   getHeroes(): Hero[] {
     return this.data;
   }
+  getHero(id: number): Hero {
+    return this.data[id];
+  }
+  filterHero(heroToFilter: string): Hero[] {
+    let heroFound: Hero[] = [];
+    heroToFilter = heroToFilter.toLowerCase();
+    for(let hero of this.data) {
+      let name = hero.name.toLowerCase();
+      if( name.indexOf(heroToFilter) >= 0 ) {
+        heroFound.push(hero); 
+      }
+    }
+    return heroFound;
+  }
 }
 
 export interface Hero {
