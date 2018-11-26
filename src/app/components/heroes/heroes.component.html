@@ -1,17 +1,5 @@
 <div class="container mt-3 animated fadeIn text-white">
-<div class="card-deck row">
-  <div class="col-md-4 col-sm-6 p-3" *ngFor="let hero of heroes; let i = index">
-      <div class="card text-center" id="custom-background">
-          <img class="card-img-top" [src]="hero.img" [alt]="hero.name">
-          <div class="card-body">
-            <h5 class="card-title">{{ hero.name }}</h5>
-            <p class="card-text">{{ hero.bio }}</p>
-            <small>{{ hero.home}} {{ hero.release | date: 'y' }}</small>
-          </div>
-          <div class="card-footer">
-            <a [routerLink]="['/hero', i]" class="btn btn-dark btn-block">More</a>
-          </div>
-        </div>
-  </div>    
+<div class="row">
+  <app-card-hero [hero]="hero" [index]="i" *ngFor="let hero of heroes; let i = index" class="col-md-4 col-sm-6 p-3"></app-card-hero>   
 </div>
 </div>

@@ -1,3 +1,11 @@
-<p>
-  card-hero works!
-</p>
+<div class="card text-center" id="custom-background">
+  <img class="card-img-top" [src]="hero.img" [alt]="hero.name">
+  <div class="card-body">
+    <h5 class="card-title">{{ hero.name }}</h5>
+    <p class="card-text">{{ hero.bio }}</p>
+    <small>{{ hero.home}} {{ hero.release | date: 'y' }}</small>
+  </div>
+  <div class="card-footer">
+    <a [routerLink]="['/hero', index]" class="btn btn-dark btn-block">More</a>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import { HeroesService, Hero } from '../../services/heroes.service';
   styleUrls: ['./filter-hero.component.css']
 })
 export class FilterHeroComponent implements OnInit {
-  public filterHeroes: Hero[] = [];
+  public filterHeroes: Hero[];
   public searchText: string;
   constructor(private activatedRoute: ActivatedRoute, private heroesService: HeroesService) {
     this.activatedRoute.params.subscribe( data => {

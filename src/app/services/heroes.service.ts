@@ -66,9 +66,11 @@ export class HeroesService {
   filterHero(heroToFilter: string): Hero[] {
     let heroFound: Hero[] = [];
     heroToFilter = heroToFilter.toLowerCase();
-    for(let hero of this.data) {
+    for(let i = 0; i < this.data.length; i++) {
+      let hero = this.data[i];
       let name = hero.name.toLowerCase();
       if( name.indexOf(heroToFilter) >= 0 ) {
+        hero.index = i;
         heroFound.push(hero); 
       }
     }
@@ -82,4 +84,5 @@ export interface Hero {
   img: string;
   release: string;
   home: string;
+  index?: number;
 }
